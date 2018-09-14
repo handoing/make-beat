@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BeatMaker</title>
+    <style>
+        body {
+            background: #000000;
+        }
+        .button {
+            background: #77b55a;
+            border-radius: 4px;
+            font-family: Arial;
+            color: #ffffff;
+            font-size: 16px;
+            padding: 8px 20px 8px 20px;
+            border: solid #4b8f29 1px;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            color: #ffffff;
+            background: #72b352;
+            text-decoration: none;
+        }
+        .key-borad {
+            text-align: center;
+        }
+        .default-bean {
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            cursor: pointer;
+            opacity: .2;
+            text-align: center;
+            border-radius: 6px;
+            position: relative;
+            background: #fff;
+        }
+        .default-bean.active {
+            opacity: .5;
+        }
+        .kick-bean {
+            background-color: rgb(13, 199, 91);
+            opacity: .8;
+        }
+        .kick .on {
+            background-color: rgb(13, 199, 91);
+            opacity: .8;
+        }
+        .kick .on.active {
+            opacity: 1;
+        }
+        .hat-bean {
+            background-color: rgb(255, 115, 23);
+            opacity: .8;
+        }
+        .hat .on {
+            background-color: rgb(255, 115, 23);
+            opacity: .8;
+        }
+        .hat .on.active {
+            opacity: 1;
+        }
+        .snare-bean {
+            background-color: rgb(245, 185, 22);
+            opacity: .8;
+        }
+        .snare .on {
+            background-color: rgb(245, 185, 22);
+            opacity: .8;
+        }
+        .snare .on.active {
+            opacity: 1;
+        }
+        .perc-bean {
+            background-color: rgb(26, 203, 247);
+            opacity: .8;
+        }
+        .perc .on {
+            background-color: rgb(26, 203, 247);
+            opacity: .8;
+        }
+        .perc .on.active {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="key-borad">
+        <div class="kick" data-sound="kick">
+            <div class="default-bean c1" id="kick-1"></div>
+            <div class="default-bean c2" id="kick-2"></div>
+            <div class="default-bean c3" id="kick-3"></div>
+            <div class="default-bean c4" id="kick-4"></div>
+            <div class="default-bean c5" id="kick-5"></div>
+            <div class="default-bean c6" id="kick-6"></div>
+            <div class="default-bean c7" id="kick-7"></div>
+            <div class="default-bean c8" id="kick-8"></div>
+            <div class="default-bean c9" id="kick-9"></div>
+            <div class="default-bean c10" id="kick-10"></div>
+            <div class="default-bean c11" id="kick-11"></div>
+            <div class="default-bean c12" id="kick-12"></div>
+            <div class="default-bean c13" id="kick-13"></div>
+            <div class="default-bean c14" id="kick-14"></div>
+            <div class="default-bean c15" id="kick-15"></div>
+            <div class="default-bean c16" id="kick-16"></div>
+        </div>
+
+        <div class="hat" data-sound="hat">
+            <div class="default-bean c1" id="hat-1"></div>
+            <div class="default-bean c2" id="hat-2"></div>
+            <div class="default-bean c3" id="hat-3"></div>
+            <div class="default-bean c4" id="hat-4"></div>
+            <div class="default-bean c5" id="hat-5"></div>
+            <div class="default-bean c6" id="hat-6"></div>
+            <div class="default-bean c7" id="hat-7"></div>
+            <div class="default-bean c8" id="hat-8"></div>
+            <div class="default-bean c9" id="hat-9"></div>
+            <div class="default-bean c10" id="hat-10"></div>
+            <div class="default-bean c11" id="hat-11"></div>
+            <div class="default-bean c12" id="hat-12"></div>
+            <div class="default-bean c13" id="hat-13"></div>
+            <div class="default-bean c14" id="hat-14"></div>
+            <div class="default-bean c15" id="hat-15"></div>
+            <div class="default-bean c16" id="hat-16"></div>
+        </div>
+
+        <div class="snare" data-sound="snare">
+            <div class="default-bean c1" id="snare-1"></div>
+            <div class="default-bean c2" id="snare-2"></div>
+            <div class="default-bean c3" id="snare-3"></div>
+            <div class="default-bean c4" id="snare-4"></div>
+            <div class="default-bean c5" id="snare-5"></div>
+            <div class="default-bean c6" id="snare-6"></div>
+            <div class="default-bean c7" id="snare-7"></div>
+            <div class="default-bean c8" id="snare-8"></div>
+            <div class="default-bean c9" id="snare-9"></div>
+            <div class="default-bean c10" id="snare-10"></div>
+            <div class="default-bean c11" id="snare-11"></div>
+            <div class="default-bean c12" id="snare-12"></div>
+            <div class="default-bean c13" id="snare-13"></div>
+            <div class="default-bean c14" id="snare-14"></div>
+            <div class="default-bean c15" id="snare-15"></div>
+            <div class="default-bean c16" id="snare-16"></div>
+        </div>
+
+        <div class="perc" data-sound="perc">
+            <div class="default-bean c1" id="perc-1"></div>
+            <div class="default-bean c2" id="perc-2"></div>
+            <div class="default-bean c3" id="perc-3"></div>
+            <div class="default-bean c4" id="perc-4"></div>
+            <div class="default-bean c5" id="perc-5"></div>
+            <div class="default-bean c6" id="perc-6"></div>
+            <div class="default-bean c7" id="perc-7"></div>
+            <div class="default-bean c8" id="perc-8"></div>
+            <div class="default-bean c9" id="perc-9"></div>
+            <div class="default-bean c10" id="perc-10"></div>
+            <div class="default-bean c11" id="perc-11"></div>
+            <div class="default-bean c12" id="perc-12"></div>
+            <div class="default-bean c13" id="perc-13"></div>
+            <div class="default-bean c14" id="perc-14"></div>
+            <div class="default-bean c15" id="perc-15"></div>
+            <div class="default-bean c16" id="perc-16"></div>
+        </div>
+        <button id="c-btn" class="button">开始</button>
+    </div>
+
+    <script src="./src/js/sprint.js"></script>
+    <script src="./src/js/data/_kit.js"></script>
+    <script src="./src/js/main.js"></script>
+</body>
+
+</html>
